@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "container">
+
+
+<br>
+{% if data %}
+	{% if data == "error" %}
+		<p>There was an error please try again.</p>
+	{% else %}
+		<h1>{{ data.companyName }}</h1> <br>
+		Price: ${{ data.latestPrice }}<br>
+		Previous Close: ${{ data.previousClose }}<br>
+		Market Cap: ${{ data.marketCap }}<br>
+		YTD Change: {{ data.ytdChange }}<br>
+		Year High: {{ data.week52High }}<br>
+		Year Low: {{ data.week52Low }}<br>
+	{% endif %}
+{% else %}
+{% endif %}
+
+</div>
+{% endblock %}
